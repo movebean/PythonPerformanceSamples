@@ -51,5 +51,3 @@ def timeconsume(func = None, logger_func = sys.stdout.write):
   inner_func.__code__ = func.__code__
   #_funcwrapper(func, inner_func)
   return inner_func
-
-  return new_func
