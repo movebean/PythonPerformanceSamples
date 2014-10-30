@@ -10,8 +10,9 @@ from urllib2 import urlopen
 
 monkey.patch_all()
 
-TOTAL_NUM = 100
+TOTAL_NUM = 1
 URL = "http://www.google.com"
+URL = "http://kosmixmedia.com/static/4b7609c0cb834864b992d908504c03ba.jpg"
 
 @timeconsume
 def TestGevent():
@@ -41,10 +42,11 @@ def TestThreading():
 @timeconsume
 def TestSynchron():
   for i in  range(TOTAL_NUM):
-    _ = urlopen(URL).read()
+    a = urlopen(URL).read()
+  print a
 
 
 
 TestSynchron()
-TestThreading()
-TestGevent()
+#TestThreading()
+#TestGevent()
